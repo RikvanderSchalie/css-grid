@@ -1,1 +1,63 @@
-/*Maak hier jouw CSS!*/
+.grid-container {
+    background-color: antiquewhite;
+    padding: 16px;
+    display: grid;
+    row-gap: 16px;
+    column-gap: 16px;
+    grid-template-columns: 1fr;
+    grid-template-rows: 50px auto 50px 50px 50px 50px 50px;
+    grid-template-areas:
+        "A"
+        "B"
+        "C"
+        "D"
+        "E"
+        "."
+        "F";
+}
+
+@media screen and (min-width: 576px) {
+    .grid-container {
+        grid-template-columns: 1fr 1fr 1fr;
+        grid-template-rows: 50px 190px 100px auto 50px;
+        grid-template-areas:
+            "A C C"
+            "B C C"
+            "B E D"
+            "B E ."
+            "F F F";
+    }
+}
+
+.grid-item {
+    display: flex;
+    padding: 8px;
+    color: white;
+    background-color: darkred;
+    align-items: center;
+    justify-content: center;
+}
+
+#grid-header {
+    grid-area: A;
+}
+
+#grid-aside-lorem {
+    grid-area: B;
+}
+
+#grid-aside-large {
+    grid-area: C;
+}
+
+#grid-aside-small {
+    grid-area: D;
+}
+
+#grid-section-middle {
+    grid-area: E;
+}
+
+#grid-footer {
+    grid-area: F;
+}
